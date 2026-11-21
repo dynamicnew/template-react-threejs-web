@@ -45,9 +45,10 @@ Create only the assets appropriate for this repository:
 1. **`.gitignore`:** ensure `.clarifydoc/` is ignored so generated analysis
    caches are never committed or hand-edited.
 2. **Conditional rules (both platforms, keeping `AGENTS.md` <= ~70 lines):**
-   - Antigravity: `.agents/rules/clarifydoc.md` (`trigger: model_decision`).
+   - Antigravity: `.agents/rules/clarifydoc.md` (`trigger: model_decision` and
+     a clear `description:` so Antigravity loads it only when relevant).
    - GitHub Copilot: `.github/instructions/clarifydoc.instructions.md`
-     (`applyTo: "src/**, api/**"`).
+     (`applyTo: "src/**,api/**"`).
    - Rules to include:
      - Call `clarifydoc_status` first via one provider and verify the server is
        bound to this repository root. If `clarifydoc_status` reports a
@@ -66,7 +67,7 @@ Create only the assets appropriate for this repository:
        (never delete exports solely on a static unused report). Distinguish
        indexed handlers (`clarifydoc_file`) from recognized routes
        (`clarifydoc_routes`): file-based serverless handlers like
-       `api/dispatch.js` may be indexed while `clarifydoc_routes` reports `0`
+       `api/<handler>.js` may be indexed while `clarifydoc_routes` reports `0`
        routes and `clarifydoc_screens` marks outbound calls unmatched.
      - Require user confirmation before `clarifydoc_analyze` or
        `clarifydoc_diff` baseline/cache writes; never hand-edit `.clarifydoc/`.
@@ -90,12 +91,13 @@ Create only the assets appropriate for this repository:
    - `clarifydoc-refactor/SKILL.md` — 4-phase map -> plan -> edit -> verify
      preserving `three-vendor` lazy chunking and single-stylesheet theme tokens
      in `src/styles/main.css`.
-   - `clarifydoc-review-branch/SKILL.md` — `impact`, `contract` on `api/`
-     routes, `health`.
-   - `clarifydoc-explain-screen/SKILL.md` — `screens`, `routes`, `data_flows`
-     across views and serverless endpoints.
-   - `clarifydoc-trace-feature/SKILL.md` — end-to-end `route/view ->
-     component/helper -> API handler -> data/storage` chain (`search`,
+   - `clarifydoc-review-branch/SKILL.md` — `impact`, `health`, and (when the
+     repo has `api/` routes) `contract` checks.
+   - *(Include only when the repo has UI screens + API routes)*
+     `clarifydoc-explain-screen/SKILL.md` (`screens`, `routes`, `data_flows`
+     across views and serverless endpoints) and
+     `clarifydoc-trace-feature/SKILL.md` (end-to-end `route/view ->
+     component/helper -> API handler -> data/storage` chain using `search`,
      `screens`, `routes`, `data_flows`, `trace`).
 
 ## 4. Verify before committing

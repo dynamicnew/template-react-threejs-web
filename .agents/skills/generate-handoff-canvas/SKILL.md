@@ -45,10 +45,11 @@ Resolve the repository root from `extension.mjs` as:
   using `session.rpc.canvas.list()`, `session.capabilities.ui?.elicitation`,
   `session.ui.select(...)`, and `session.rpc.canvas.open(...)` with a
   deterministic `instanceId` (`base64url(extensionId + "\0" + canvasId)`).
-- `notes.mjs`: Fixed-path editor for `docs/ai/todo.md` (max 64 KiB, `lstat` +
-  `nlink === 1n` symlink/hardlink rejection, SHA-256 optimistic HTTP `409`
-  concurrency, serialized queue, exclusive lockfile, atomic rename). Never
-  touches `docs/ai/handoff.md` or executes note text.
+- `notes.mjs`: Fixed-path editor for `docs/ai/todo.md` at `GET`/`PUT /api/notes`
+  (`<= 64 KiB` body cap for `PUT /api/notes`, `lstat` + `nlink === 1n`
+  symlink/hardlink rejection, SHA-256 optimistic HTTP `409` concurrency,
+  serialized queue, exclusive lockfile, atomic rename). Never touches
+  `docs/ai/handoff.md` or executes note text.
 
 ### Non-negotiable security invariants
 
@@ -58,8 +59,10 @@ Resolve the repository root from `extension.mjs` as:
 2. Enforce `req.headers.host` equals `127.0.0.1:<port>` or `localhost:<port>`
    (`403` otherwise) and valid capability (`404` otherwise) before any route.
 3. Require `x-handoff-token`, `origin === "http://" + host`, and
-   `content-type === "application/json"` on `POST /api/open` (and any optional
-   write route), with body size capped at 8 KiB.
+   `content-type === "application/json"` on `POST /api/open` and any optional
+   `POST`/`PUT` write route (`403` otherwise), with bounded request body sizes
+   (`<= 8192` bytes for `POST /api/open` and small action routes; `<= 64 KiB`
+   for optional `PUT /api/notes`).
 4. Serve HTML with `cache-control: no-store`, `x-content-type-options: nosniff`,
    `referrer-policy: no-referrer`, and
    `content-security-policy: frame-ancestors 'self' vscode-webview: vscode-file: https://*.vscode-cdn.net`.

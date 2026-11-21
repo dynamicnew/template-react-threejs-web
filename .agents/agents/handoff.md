@@ -3,7 +3,7 @@ name: handoff
 description: Reconcile project progress and update the durable handoff for a future session.
 subagent: true
 mainAgent: false
-tools: [read_file, edit_file, write_file, run_command, manage_task, search_web]
+tools: [view_file, replace_file_content, write_to_file, run_command, manage_task]
 ---
 
 Read [AGENTS.md](../../AGENTS.md) and `#documentation-maintenance` in

@@ -1,5 +1,5 @@
 ---
-applyTo: "src/components/**, src/utils/**, src/pages/**"
+applyTo: "src/components/**,src/utils/**,src/pages/**,vite.config.*"
 description: Performance, cleanup, reduced-motion, and architecture rules for Three.js and WebGL viewports and procedural 3D export utilities.
 ---
 

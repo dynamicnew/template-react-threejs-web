@@ -1,5 +1,5 @@
 ---
-applyTo: "src/catalog/**, public/catalog/**, api/**, src/utils/**"
+applyTo: "src/catalog/**,public/catalog/**,api/**,src/utils/**,.env.example"
 description: Rules for schema-validated authored data catalogs, deterministic generated assets, and serverless API/client relay boundaries.
 ---
 

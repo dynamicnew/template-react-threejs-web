@@ -1,5 +1,5 @@
 ---
-applyTo: "docs/brand/**, src/data/**, src/pages/**"
+applyTo: "docs/brand/**,src/data/**,src/catalog/**,src/pages/**,src/components/**,index.html"
 description: Brand identity, creative vision, and feature-preservation rules when editing brand docs, static data, or user-facing pages.
 ---
 

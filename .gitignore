@@ -17,8 +17,9 @@ build/
 .vite/
 *.local
 *.tsbuildinfo
-*.glb
-*.zip
+# Generated local exports only; authored 3D models under public/ or src/ stay tracked
+exports/*.glb
+exports/*.zip
 
 # Playwright and test artifacts
 test-results/

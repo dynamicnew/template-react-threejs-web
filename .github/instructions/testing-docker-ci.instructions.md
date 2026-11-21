@@ -1,5 +1,5 @@
 ---
-applyTo: "tests/**, docker/**, compose.yaml, playwright*.config.*, vite.config.*, .github/workflows/**"
+applyTo: "tests/**,docker/**,compose.yaml,compose.yml,docker-compose*.y*ml,Dockerfile*,package.json,package-lock.json,.gitattributes,playwright*.config.*,vite.config.*,.github/workflows/**"
 description: Docker-only test execution, Playwright E2E/WebGL testing, dependency hygiene, LF asset line endings, and CI workflow rules.
 ---
 

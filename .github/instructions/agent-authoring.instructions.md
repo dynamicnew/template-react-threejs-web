@@ -1,6 +1,6 @@
 ---
-applyTo: ".agents/**, .github/agents/**, .github/instructions/**, .github/skills/**"
-description: Guidance for authoring or modifying rules, instructions, agents, skills, and hook docs.
+applyTo: ".agents/**,.github/agents/**,.github/instructions/**,.github/skills/**,.github/hooks/**,AGENTS.md,.github/copilot-instructions.md"
+description: Guidance for authoring or modifying AGENTS.md, rules, instructions, agents, skills, and hook docs under .agents/ or .github/.
 ---
 
 - Define clearly when the guidance applies, its inputs, expected outcome,

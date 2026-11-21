@@ -13,7 +13,7 @@ description: Guardrails for creating, editing, or reviewing a project-local hand
   root; no `package.json`/VSIX), bind only
   `127.0.0.1:0` per `instanceId`, close all connections in `onClose`, enforce
   `Host` (`403`) + `timingSafeEqual` capability (`404`) + same-origin
-  `x-handoff-token` on `POST` (`403`), build DOM via `textContent` only (no
+  `x-handoff-token` on writes (`403`), build DOM via `textContent` only (no
   `innerHTML`, zero remote fonts/scripts), scrub Git remote credentials,
   validate OS links via `realpath` + non-executable allowlist, and strip
   `ELECTRON_*` before spawning link handlers.

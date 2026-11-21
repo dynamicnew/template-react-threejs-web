@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: Guidance for authoring or modifying rules, instructions, agents, skills, and hook docs under .agents/ or .github/.
+description: Guidance for authoring or modifying AGENTS.md, rules, instructions, agents, skills, and hook docs under .agents/ or .github/.
 ---
 
 - Define clearly when the guidance applies, its inputs, expected outcome,

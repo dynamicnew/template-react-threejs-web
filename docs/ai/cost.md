@@ -23,8 +23,8 @@ surfaces, and context-threshold pricing tiers change over time.
 
 | Work | Tier |
 |---|---|
-| Search, listing, reading files, running Docker tests, summarizing, formatting | Light (`flash_lite` / `flash` / `Explorer`) |
-| Everyday coding with a clear plan, routine edits, writing docs | Standard (`inherit` / `Implementer`) |
+| Search, listing, reading files, summarizing, formatting | Light (`flash_lite` / `flash` / `Explorer`) |
+| Everyday coding with a clear plan, routine edits, running Docker tests, writing docs | Standard (`inherit` / `Implementer`) |
 | Architecture, WebGL/Three.js debugging, accessibility review, ambiguous diffs | Strong (`pro` / `Reviewer`) |
 
 Plan with a strong model, then implement with a standard one.

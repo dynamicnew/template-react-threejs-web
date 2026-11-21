@@ -3,7 +3,7 @@ name: reviewer
 description: Review a diff or plan for real defects, WebGL/a11y regressions, brand/copy leaks, and missing Docker tests without editing files.
 subagent: true
 mainAgent: false
-tools: [read_file, run_command]
+tools: [view_file, run_command]
 ---
 
 Follow [docs/ai/read-lists/review.md](../../docs/ai/read-lists/review.md).

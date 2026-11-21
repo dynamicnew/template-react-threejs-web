@@ -3,7 +3,7 @@ name: implementer
 description: Implement a bounded, already-planned change and run targeted Docker checks without committing.
 subagent: true
 mainAgent: false
-tools: [read_file, edit_file, write_file, run_command, manage_task]
+tools: [view_file, replace_file_content, write_to_file, run_command, manage_task]
 ---
 
 Follow [docs/ai/read-lists/implement.md](../../docs/ai/read-lists/implement.md).

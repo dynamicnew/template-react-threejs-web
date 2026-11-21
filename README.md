@@ -47,8 +47,8 @@ includes in either file.
    adoption or initial setup to generate the ClarifyDoc rule, skills,
    `.gitignore` entry, and MCP guidance on demand (otherwise create none).
 7. Delete anything you do not use.
-8. Run `pwsh -NoProfile -File scripts/check-context-size.ps1` to verify
-   always-on budgets, Antigravity rule caps, and skill deduplication.
+8. Run `pwsh -NoProfile -File scripts/check-context-size.ps1 -FailOnWarning`
+   to verify always-on budgets, Antigravity rule caps, and skill deduplication.
 
 ## Curated skills included
 
@@ -68,8 +68,11 @@ Stored once in `.agents/skills/` for both platforms:
 ## What is deliberately omitted
 
 - **No application code, brand lore, secrets, or machine-local paths.** MCP
-  configs live as empty `.example` templates (`.agents/mcp-config.json.example`
-  and `.mcp.json.example`); never commit webhook URLs, tokens, or local paths.
+  configs live as empty `.example` templates (`.agents/mcp_config.json.example`
+  and `.mcp.json.example`); note that `.mcp.json` and Antigravity's active
+  `.agents/mcp_config.json` use `"mcpServers"`, while VS Code's
+  `.vscode/mcp.json` expects `"servers"`. Never commit webhook URLs, tokens, or
+  local paths.
 - **No enabled hooks.** See `.agents/hooks/README.md` and
   `.github/hooks/README.md`.
 - **No heavy vendor skill asset bundles.** External UI/React/Playwright/design
@@ -88,12 +91,12 @@ AGENTS.md                                  always-loaded dual-platform router (<
   agents/                                  implementer, reviewer, handoff (explore uses built-in research)
   skills/                                  6 shared portable skills (core + canvas & ClarifyDoc generators)
   hooks/README.md                          hook policy (none enabled)
-  mcp-config.json.example                  empty MCP server list (Antigravity format)
+  mcp_config.json.example                  empty MCP server list (Antigravity format)
 .github/
   instructions/                            8 Copilot path-scoped instructions (applyTo)
   agents/                                  coordinator, explorer, implementer, reviewer, handoff
   hooks/README.md                          hook policy (none enabled)
-  pull-request-template.md                 PR verification & handoff checklist (rename to pull_request_template.md to auto-populate on GitHub)
+  pull_request_template.md                 PR verification & handoff checklist
 docs/
   ai/                                      handoff.md, handoff-history/, todo.md, decisions.md, concerns.md, memory.md, cost.md, read-lists/
   brand/identity.md                        brand identity, theme tokens & vision template

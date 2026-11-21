@@ -1,5 +1,5 @@
 ---
-applyTo: "src/styles/**, src/pages/**, src/components/**, index.html"
+applyTo: "src/styles/**,src/pages/**,src/components/**,index.html"
 description: Tailwind CSS v4 single-stylesheet, semantic theme tokens, accessibility, and production copy rules for UI pages and styles.
 ---
 
