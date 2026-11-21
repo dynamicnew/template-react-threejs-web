@@ -34,9 +34,9 @@ file under 70 lines.
 - **Preserve vision & clean.** Brand canon, creative work and interactive
   features are deliberate: prefer adding/refining over removing. Remove own
   scratch files and dead code; do not refactor untouched files.
-- **Branches & commits.** Start features on `feature/<topic>` (never directly
-  on `main`). Commit verified batches (main agent / coordinator only; subagents
-  do not commit). Do not push or rewrite history unless asked.
+- **Branches & commits.** Develop on `feature/<topic>`, merge into `dev`, then
+  PR `dev` into `main`. Commit verified batches (main agent / coordinator only;
+  subagents do not commit). Do not push or rewrite history unless asked.
 - **Ask first.** Stop and ask before changing IDE, user, account or billing
   settings; accessing signed-in accounts; deploying; revising canon/scope; or
   destructive actions.

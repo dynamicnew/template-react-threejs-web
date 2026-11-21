@@ -1,7 +1,7 @@
 ## Summary
 
 - What changed and why:
-- Feature branch (`feature/<topic>`):
+- Source branch (`dev` from `feature/<topic>`, targeting `main`):
 
 ## Verification (Docker only)
 
