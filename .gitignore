@@ -1,0 +1,33 @@
+# Secrets, local config and billing exports
+.env
+.env.*
+!.env.example
+*.local.*
+ai-credits*.csv
+
+# Dependencies (keep package.json and root package-lock.json tracked)
+node_modules/
+.pnp
+.pnp.js
+
+# Vite, build and local export outputs
+dist/
+dist-ssr/
+build/
+.vite/
+*.local
+*.tsbuildinfo
+*.glb
+*.zip
+
+# Playwright and test artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Generated analysis and temporary agent state
+.orchestrator/
+.worktrees/
+.cursor/
+.claude/
